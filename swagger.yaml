@@ -237,41 +237,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  '/platformCerts':
-    post:
-      summary: Get one or more Platform Certificates
-      description: Based on a combination of serial number and sku / product number, platform certificates are provided as zipped file.
-      operationId: postGetPlatformCert
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              oneOf:
-                - $ref: '#/components/schemas/PlatformCertRequestSerial'
-                - $ref: '#/components/schemas/PlatformCertRequestPO'
-                - $ref: '#/components/schemas/PlatformCertRequestDaterange'                                
-      responses:
-        '200':
-          description: Expected response to a valid request
-          content:
-            application/json:
-              schema:
-                properties:
-                  data:
-                    $ref: '#/components/schemas/PlatformCertInfo'
-        '400':
-          description: Bad request.
-        '401':
-          description: Authorization information is missing or invalid.
-        '404':
-          description: No platform certificate found.
-        5XX:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
 components:
   securitySchemes:
     ApiKeyAuth:
