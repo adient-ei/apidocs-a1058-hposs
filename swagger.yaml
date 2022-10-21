@@ -4,8 +4,8 @@ info:
   title: HP OSS
   description: ' HP OSS Marketplace Web Service is an integrated web service API that helps HP customers to programatically exchange data on orders, line items, order status and manufacturing data.'
 servers:
-  - url: 'https://apigatewayqa.adient.com/hp-oss/v1'
-    description: Quality
+  - url: 'https://apigatewaydev.adient.com/hp-oss/v1'
+    description: Development
 paths:
   /changedorders:
     get:
